@@ -4,14 +4,14 @@ use 5.006_002;
 use Mouse ();
 use Mouse::Exporter;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 Mouse::Exporter->setup_import_methods();
 
 sub init_meta {
     shift;
     my $meta = Mouse->init_meta(@_);
-    $meta->{strict_constructor} = 1; # XXX: Mouse-extended feature
+    $meta->strict_constructor(1); # XXX: Mouse-extended feature
     return $meta;
 }
 
